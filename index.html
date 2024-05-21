@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Electric Desi</title>
+    <title>Tour Dates - Electric Desi</title>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
-    />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <noscript
-      ><link rel="stylesheet" href="assets/css/noscript.css"
-    /></noscript>
+    <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
   </head>
   <body class="is-preload">
     <div id="wrapper">
@@ -20,34 +15,24 @@
       <div id="main">
         <!-- Header -->
         <header id="header">
-          <h1>ELECTRIC DESI</h1>
-          <!-- <p>DJ AMSAL &nbsp;&bull;&nbsp; TRIBAHL &nbsp;&bull;&nbsp; SIDD KEL</p> -->
-          <p> <a href="tour/"> TOUR DATES </a> </p>
-          <nav>
-            <ul>
-              <li>
-                <a href="https://www.tiktok.com/@electric_desi" target="_blank" class="icon brands fa-video-camera"
-                  ><span class="label">TikTok</span></a
-                >
-              </li>
-              <li>
-                <a href="https://www.instagram.com/electric_desi/" target="_blank" class="icon brands fa-instagram"
-                  ><span class="label">Instagram</span></a
-                >
-              </li>
-              <li>
-                <a href="https://soundcloud.com/electric-desi" target="_blank" class="icon brands fa-soundcloud"
-                  ><span class="label">SoundCloud</span></a
-                >
-              </li>
+          <h1>ELECTRIC DESI TOUR DATES</h1>
+          <p>
+            <ul class="dates">
+                <li><strong>Chicago, IL</strong> - June 28 - <a> Tickets </a> </li>
+                <li><strong>Dallas, TX</strong> - July 05 - <a> Tickets </a> </li>
+                <li><strong>Austin, TX</strong> - July 06 - <a> Tickets </a> </li>
+                <li><strong>Los Angeles, CA</strong> - July 12 - <a> Tickets </a> </li>
+                <li><strong>San Francisco, CA</strong> - July 13 - <a> Tickets </a> </li>
+                <li><strong>Washington, DC</strong> - August 02 - <a> Tickets </a> </li>
+                <li><strong>New York, NY</strong> - August 16 - <a> Tickets </a> </li>
+                <li><strong>Atlanta, GA</strong> - August 30 - <a> Tickets </a> </li>
             </ul>
-          </nav>
+          </p>
         </header>
 
         <!-- Footer -->
         <footer id="footer">
-          <span class="copyright"
-            >&copy; Electric Desi 2024. All Rights Reserved. Website by Nickhil Tekwani.
+          <span class="copyright">&copy; Electric Desi 2024. Website by Nickhil Tekwani.</span>
         </footer>
       </div>
     </div>
@@ -55,11 +40,46 @@
       window.onload = function () {
         document.body.classList.remove("is-preload");
       };
-      window.ontouchmove = function () {
-        return false;
+    </script>
+    <script>
+      window.onload = function() {
+        // Images for screens wider than 768px
+        var desktopImages = [
+          "../assets/css/images/backgrounds/Horizontal1.jpeg",
+          "../assets/css/images/backgrounds/Horizontal2.jpeg",
+          "../assets/css/images/backgrounds/Horizontal3.jpeg",
+          "../assets/css/images/backgrounds/Horizontal4.jpeg",
+          "../assets/css/images/backgrounds/Horizontal5.jpg"
+        ];
+    
+        // Images for screens smaller than 768px
+        var mobileImages = [
+          "../assets/css/images/backgrounds/vertical/1.jpg",
+          "../assets/css/images/backgrounds/vertical/2.jpg",
+          "../assets/css/images/backgrounds/vertical/3.jpg",
+          "../assets/css/images/backgrounds/vertical/4.jpg",
+        ];
+    
+        // Check screen width and select the appropriate image array
+        var images = window.innerWidth >= 768 ? desktopImages : mobileImages;
+    
+        // Function to select a random image
+        var imageIndex = Math.floor(Math.random() * images.length);
+        var selectedImage = images[imageIndex];
+    
+        // Set the background image
+        document.getElementById('bg').style.backgroundImage = 'url(' + selectedImage + ')';
+    
+        // Remove preload class
+        document.body.classList.remove("is-preload");
       };
-      window.onorientationchange = function () {
-        document.body.scrollTop = 0;
+    
+      // Optional: Adjust the background image if the window is resized
+      window.onresize = function() {
+        var images = window.innerWidth >= 768 ? desktopImages : mobileImages;
+        var imageIndex = Math.floor(Math.random() * images.length);
+        var selectedImage = images[imageIndex];
+        document.getElementById('bg').style.backgroundImage = 'url(' + selectedImage + ')';
       };
     </script>
   </body>
